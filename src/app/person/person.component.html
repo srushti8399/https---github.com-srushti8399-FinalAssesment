@@ -1,0 +1,164 @@
+<h2 class="text-uppercase text-center mb-5 padding">Person Form</h2>
+<form class="center padding-table" [formGroup]="productForm" (ngSubmit)="submit()" >
+   
+ <div class="row">
+  <div class="col-md-2"></div>
+   <!-- <div class="col-md-3 mb-4">
+     <div class="form-outline">
+       
+  <mat-form-field appearance="fill" class="example-full-width">
+    <mat-label>Gender</mat-label>
+  <mat-select [formControl]="gender" multiple >
+    <mat-select-trigger>
+      {{gender.value?.[0] || ''}}
+      <span *ngIf="(gender.value?.length || 0) > 1" class="example-additional-selection">
+        (+{{(gender.value?.length || 0) - 1}} {{gender.value?.length === 2 ? 'other' : 'others'}})
+      </span>
+    </mat-select-trigger>
+    <mat-option *ngFor="let gender of genderList" [value]="gender">{{gender}}</mat-option>
+  </mat-select>
+  <mat-error *ngIf="productForm.get('firstname')!.errors!==null && productForm.get('firstname')!.errors!['required']">
+    Category is <strong>required</strong>
+  </mat-error>
+  </mat-form-field>
+     </div>
+   </div> -->
+   <div class="col-md-3 mb-4">
+     <div class="form-outline">
+       <mat-form-field appearance="fill" class="example-full-width">
+         <mat-label>FirstName</mat-label>
+         <input required id="name1"  matInput placeholder="Enter FirstName"   name="firstname"  formControlName="firstname"  />
+           <mat-error *ngIf="productForm.get('firstname')!.errors!==null && productForm.get('firstname')!.errors!['required']">
+           FirstName is <strong>required</strong>
+         </mat-error> 
+       </mat-form-field>
+     </div>
+   </div>
+   <div class="col-md-3 mb-4">
+    <div class="form-outline">
+      <mat-form-field appearance="fill" class="example-full-width">
+        <mat-label>MiddleName</mat-label>
+        <input  id="name2"  matInput placeholder="Enter MiddleName"   name="middlename"  formControlName="middlename"  />
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="col-md-3 mb-4">
+    <div class="form-outline">
+      <mat-form-field appearance="fill" class="example-full-width">
+        <mat-label>LastName</mat-label>
+        <input required id="name3"  matInput placeholder="Enter LastName"   name="lastname"  formControlName="lastname"  />
+          <mat-error *ngIf="productForm.get('lastname')!.errors!==null && productForm.get('lastname')!.errors!['required']">
+          LastName is <strong>required</strong>
+        </mat-error> 
+      </mat-form-field>
+    </div>
+  </div>
+ </div>
+  <div class="row">
+  <div class="col-md-2"></div>
+   
+
+ <div class="col-md-3 mb-4">
+     <div class="form-outline">
+       
+  <mat-form-field appearance="fill" class="example-full-width">
+    <mat-label>Gender</mat-label>
+  <mat-select [formControl]="gender" multiple >
+    <mat-select-trigger>
+      {{gender.value?.[0] || ''}}
+      <span *ngIf="(gender.value?.length || 0) > 1" class="example-additional-selection">
+        (+{{(gender.value?.length || 0) - 1}} {{gender.value?.length === 2 ? 'other' : 'others'}})
+      </span>
+    </mat-select-trigger>
+    <mat-option *ngFor="let gender of genderList" [value]="gender">{{gender}}</mat-option>
+  </mat-select>
+  <mat-error *ngIf="productForm.get('gender')!.errors!==null && productForm.get('gender')!.errors!['required']">
+    Gender is <strong>required</strong>
+  </mat-error>
+  </mat-form-field>
+     </div>
+   </div> 
+
+<div class="col-md-3 mb-4">
+ <div class="form-outline">
+  
+    <mat-form-field appearance="fill" class="example-full-width">
+        <mat-label>Department</mat-label>
+      <mat-select [formControl]="department" multiple >
+        <mat-select-trigger>
+          {{department.value?.[0] || ''}}
+          <span *ngIf="(department.value?.length || 0) > 1" class="example-additional-selection">
+            (+{{(department.value?.length || 0) - 1}} {{department.value?.length === 2 ? 'other' : 'others'}})
+          </span>
+        </mat-select-trigger>
+        <mat-option *ngFor="let department of departmentList" [value]="department">{{department}}</mat-option>
+      </mat-select>
+      <mat-error *ngIf="productForm.get('department')!.errors!==null && productForm.get('department')!.errors!['required']">
+        Department is <strong>required</strong>
+      </mat-error>
+      </mat-form-field>
+   
+ </div>
+</div>
+
+     <div class="col-md-3 mb-4">
+        <div class="form-outline">
+          <mat-form-field appearance="fill" class="example-full-width">
+            <mat-label>Date of Birth</mat-label>
+            <input required id="dob" type="date" matInput placeholder="Enter Date of Birth"   name="dateofbirth"  formControlName="dateofbirth"  />
+              <mat-error *ngIf="productForm.get('dateofbirth')!.errors!==null && productForm.get('dateofbirth')!.errors!['required']">
+              Date of birth is <strong>required</strong>
+            </mat-error> 
+          </mat-form-field>
+        </div>
+      </div>
+ 
+ </div>  
+ <div class="row">
+  <div class="col-md-2"></div>
+     
+    <div class="col-md-3 mb-4">
+        <div class="form-outline">
+          <mat-form-field appearance="fill" class="example-full-width">
+            <mat-label>Address</mat-label>
+            <input required id="add"  matInput placeholder="Enter Address"   name="address"  formControlName="address"  />
+              <mat-error *ngIf="productForm.get('address')!.errors!==null && productForm.get('address')!.errors!['required']">
+                Address is <strong>required</strong>
+            </mat-error> 
+          </mat-form-field>
+        </div>
+      </div>
+       
+       <div class="col-md-3 mb-4">
+         <div class="form-outline">
+            <mat-form-field appearance="fill" class="example-full-width">
+                <mat-label>Pincode</mat-label>
+                <input required id="pincode" matInput placeholder="Enter pincode" name="pincode" formControlName="pincode"  />
+                
+                 <mat-error *ngIf="productForm.get('pincode')!.errors!==null && productForm.get('pincode')!.errors!['required']">
+                  Pincode is <strong>required</strong>
+                </mat-error>
+                <mat-error *ngIf="productForm.get('pincode')!.errors!==null && productForm.get('pincode')!.errors!['minlength']">
+                   Contains  <strong>6</strong>characters
+                 </mat-error>
+                 <mat-error *ngIf="productForm.get('pincode')!.errors!==null && productForm.get('pincode')!.errors!['maxlength']">
+                   Contains <strong>6</strong>characters 
+                 </mat-error> 
+              </mat-form-field>
+             
+         </div>
+     </div>
+
+
+ </div>
+ <div class="container" style="text-align:center;">
+  
+  
+ <button class="btn btn-success btn-block btn-lg gradient-custom-4 text-body"  name="submitbutton" >Submit</button>
+  
+  
+  
+ </div>
+ 
+</form> 
+
